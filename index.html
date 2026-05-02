@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- ЗМІНА ТЕКСТУ: Назва вкладки у браузері -->
-    <title>Web Designer Portfolio | Premium Minimalist</title>
+    <!-- Назва вкладки -->
+    <title>Web Designer Portfolio | Soft Modern</title>
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- ЗМІНА ШРИФТІВ: Посилання на шрифти Google Fonts (зараз Inter та Playfair Display) -->
+    <!-- Шрифти -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
     <style>
-        /* ЗМІНА ШРИФТІВ: Призначення шрифтів для всього сайту та заголовків */
         body { font-family: 'Inter', sans-serif; }
         h1, h2, .serif { font-family: 'Playfair Display', serif; }
         
@@ -33,143 +32,165 @@
             transform: translateX(0);
         }
 
-        /* ЗМІНА КОЛЬОРІВ: Колір розділової лінії (background) */
+        /* М'який градієнтний розділювач */
         .accent-line {
             height: 1px;
-            background: #e5e7eb;
+            background: linear-gradient(90deg, #8fa8c8, #89c2a3);
             width: 100%;
+            opacity: 0.5;
+            border-radius: 2px;
         }
 
         #project-modal {
             transition: opacity 0.5s ease-in-out;
         }
+
+        /* Заборона на чистий чорний і білий для скролбару (опціонально для естетики) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f6f8fa;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8fa8c8;
+        }
     </style>
 </head>
-<!-- ЗМІНА КОЛЬОРІВ: bg-[#fafafa] - основний колір фону (світло-сірий), text-[#1a1a1a] - основний колір тексту (майже чорний), selection:bg-black - колір фону при виділенні тексту -->
-<body class="bg-[#fafafa] text-[#1a1a1a] selection:bg-black selection:text-white">
+<!-- Фон: дуже світлий сіро-синій, Текст: темно-сірий (slate-700), Виділення: софт блю -->
+<body class="bg-[#f6f8fa] text-[#374151] selection:bg-[#8fa8c8] selection:text-[#f6f8fa]">
 
-    <!-- ЗМІНА КОЛЬОРІВ: bg-[#fafafa]/80 - колір фону навігації з прозорістю, border-gray-100 - колір нижньої рамки -->
-    <nav class="fixed w-full z-50 bg-[#fafafa]/80 backdrop-blur-md border-b border-gray-100">
+    <!-- Навігація -->
+    <nav class="fixed w-full z-50 bg-[#f6f8fa]/80 backdrop-blur-md border-b border-[#e2e8f0]">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- ЗМІНА ТЕКСТУ: Логотип або ваше ім'я -->
-            <a href="#" class="text-xl font-bold tracking-tighter uppercase">Studio.</a>
+            <a href="#" class="text-xl font-bold tracking-tighter uppercase text-[#374151]">Studio.</a>
             
             <div class="hidden md:flex space-x-12 text-sm uppercase tracking-widest font-medium">
-                <!-- ЗМІНА ТЕКСТУ: Пункти меню -->
-                <a href="#projects" class="hover:text-gray-500 transition">Projects</a>
-                <a href="#services" class="hover:text-gray-500 transition">Services</a>
-                <a href="#about" class="hover:text-gray-500 transition">About</a>
-                <a href="#contact" class="hover:text-gray-400 transition">Contact</a>
+                <a href="#projects" class="hover:text-[#89c2a3] transition duration-300">Projects</a>
+                <a href="#services" class="hover:text-[#89c2a3] transition duration-300">Services</a>
+                <a href="#about" class="hover:text-[#89c2a3] transition duration-300">About</a>
+                <a href="#contact" class="hover:text-[#89c2a3] transition duration-300">Contact</a>
             </div>
 
             <button id="menu-btn" class="md:hidden flex flex-col space-y-1.5 z-50">
-                <!-- ЗМІНА КОЛЬОРІВ: bg-black - колір ліній мобільного меню (бургера) -->
-                <span class="w-6 h-0.5 bg-black"></span>
-                <span class="w-6 h-0.5 bg-black"></span>
+                <span class="w-6 h-0.5 bg-[#374151]"></span>
+                <span class="w-6 h-0.5 bg-[#374151]"></span>
             </button>
         </div>
     </nav>
 
-    <!-- ЗМІНА КОЛЬОРІВ: bg-white - фон мобільного меню -->
-    <div id="mobile-menu" class="fixed inset-0 bg-white z-40 flex flex-col justify-center items-center space-y-8 text-2xl font-light md:hidden">
-        <a href="#projects" class="mobile-link">Projects</a>
-        <a href="#services" class="mobile-link">Services</a>
-        <a href="#about" class="mobile-link">About</a>
-        <a href="#contact" class="mobile-link">Contact</a>
+    <!-- Мобільне меню -->
+    <div id="mobile-menu" class="fixed inset-0 bg-[#f6f8fa] z-40 flex flex-col justify-center items-center space-y-8 text-2xl font-light md:hidden">
+        <a href="#projects" class="mobile-link text-[#374151] hover:text-[#89c2a3] transition">Projects</a>
+        <a href="#services" class="mobile-link text-[#374151] hover:text-[#89c2a3] transition">Services</a>
+        <a href="#about" class="mobile-link text-[#374151] hover:text-[#89c2a3] transition">About</a>
+        <a href="#contact" class="mobile-link text-[#374151] hover:text-[#89c2a3] transition">Contact</a>
     </div>
 
-    <section class="min-h-screen flex items-center justify-center px-6 pt-20">
-        <div class="max-w-4xl text-center md:text-left md:flex md:flex-col md:items-center">
-            <!-- ЗМІНА ТЕКСТУ: Головний заголовок сайту -->
-            <h1 class="text-4xl md:text-7xl leading-tight mb-8 fade-in">
-                I create <span class="italic">modern</span> websites that look stylish and drive results
+    <!-- 1. Hero Section -->
+    <!-- Легкий градієнт фону та блюр-ефекти -->
+    <section class="relative min-h-screen flex items-center justify-center px-6 pt-20 bg-gradient-to-br from-[#eef2f6] via-[#f6f8fa] to-[#eef7f3] overflow-hidden">
+        <!-- Декоративні розмиті плями (blue -> emerald) -->
+        <div class="absolute top-10 left-10 w-[400px] h-[400px] bg-[#8fa8c8] rounded-full mix-blend-multiply filter blur-[120px] opacity-30 pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-[400px] h-[400px] bg-[#89c2a3] rounded-full mix-blend-multiply filter blur-[120px] opacity-30 pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-4xl text-center md:text-left md:flex md:flex-col md:items-center">
+            <h1 class="text-4xl md:text-7xl leading-tight mb-8 fade-in text-[#2d3748]">
+                I create <span class="italic text-[#8fa8c8]">modern</span> websites that look stylish and drive results
             </h1>
-            <!-- ЗМІНА ТЕКСТУ ТА КОЛЬОРІВ: text-gray-500 - колір підзаголовка -->
-            <p class="text-lg md:text-xl text-gray-500 mb-10 max-w-2xl fade-in">
+            <p class="text-lg md:text-xl text-[#64748b] mb-10 max-w-2xl fade-in">
                 Landing pages and portfolio websites for creatives and experts
             </p>
             <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 w-full md:justify-center fade-in">
-                <!-- ЗМІНА КОЛЬОРІВ: bg-black, text-white - кнопка 1; hover:bg-gray-800 - колір при наведенні -->
-                <a href="#projects" class="bg-black text-white px-8 py-4 text-center hover:bg-gray-800 transition min-h-[44px] flex items-center justify-center">View Projects</a>
-                <!-- ЗМІНА КОЛЬОРІВ: border-black - кнопка 2; hover:bg-black hover:text-white - кольори при наведенні -->
-                <a href="#contact" class="border border-black px-8 py-4 text-center hover:bg-black hover:text-white transition min-h-[44px] flex items-center justify-center">Contact Me</a>
+                <!-- Primary кнопка: soft blue, hover: emerald з легким сяйвом -->
+                <a href="#projects" class="bg-[#8fa8c8] text-[#f8fafc] px-8 py-4 text-center hover:bg-[#89c2a3] shadow-[0_4px_20px_rgba(143,168,200,0.3)] hover:shadow-[0_4px_20px_rgba(137,194,163,0.4)] transition-all duration-300 min-h-[44px] flex items-center justify-center rounded-sm">
+                    View Projects
+                </a>
+                <!-- Secondary кнопка: темно-сіра рамка, hover: emerald -->
+                <a href="#contact" class="border border-[#374151] text-[#374151] px-8 py-4 text-center hover:border-[#89c2a3] hover:text-[#89c2a3] transition-all duration-300 min-h-[44px] flex items-center justify-center rounded-sm">
+                    Contact Me
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- ЗМІНА КОЛЬОРІВ: bg-white - фон секції About -->
-    <section id="about" class="py-24 px-6 bg-white">
+    <!-- 2. About Section -->
+    <section id="about" class="py-24 px-6 bg-[#f0f4f8]">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <!-- ЗМІНА КАРТИНКИ: Замініть цей блок <div> на тег <img>. Наприклад: <img src="шлях_до_фото.jpg" alt="Моє фото" class="w-full h-full object-cover"> -->
-            <div class="aspect-[4/5] bg-gray-100 fade-in">
-                <div class="w-full h-full flex items-center justify-center text-gray-400">[ Designer Photo ]</div>
+            <!-- Зображення або плашка: світло-сіро-синя -->
+            <div class="aspect-[4/5] bg-[#e1e7ef] fade-in rounded-sm shadow-sm relative group">
+                <div class="absolute inset-0 bg-gradient-to-tr from-[#8fa8c8] to-[#89c2a3] opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-sm"></div>
+                <div class="w-full h-full flex items-center justify-center text-[#94a3b8]">[ Designer Photo ]</div>
             </div>
             <div class="fade-in">
-                <!-- ЗМІНА ТЕКСТУ -->
-                <span class="uppercase tracking-widest text-xs text-gray-400 mb-4 block">About Me</span>
-                <h2 class="text-3xl md:text-5xl mb-6">Merging aesthetics with functionality.</h2>
-                <p class="text-gray-600 leading-relaxed text-lg">
+                <span class="uppercase tracking-widest text-xs text-[#8fa8c8] mb-4 block font-semibold">About Me</span>
+                <h2 class="text-3xl md:text-5xl mb-6 text-[#2d3748]">Merging aesthetics with functionality.</h2>
+                <p class="text-[#64748b] leading-relaxed text-lg">
                     Based in Europe, working globally. I focus on creating digital experiences that are not just beautiful, but intuitive. Every pixel serves a purpose.
                 </p>
             </div>
         </div>
     </section>
 
-    <section id="services" class="py-24 px-6">
-        <div class="max-w-7xl mx-auto">
+    <!-- 3. Services Section -->
+    <section id="services" class="py-24 px-6 relative overflow-hidden bg-[#f6f8fa]">
+        <!-- Дуже легкий блюр-елемент для атмосфери -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[#89c2a3] rounded-full opacity-5 blur-[150px] pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
             <div class="accent-line mb-12"></div>
-            <!-- ЗМІНА ТЕКСТУ -->
-            <h2 class="text-3xl mb-16 fade-in">Services</h2>
+            <h2 class="text-3xl mb-16 fade-in text-[#2d3748]">Services</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <!-- ЗМІНА ТЕКСТУ: Блоки послуг -->
-                <div class="fade-in">
-                    <h3 class="text-xl font-bold mb-4">01 / Web Design</h3>
-                    <p class="text-gray-500">Custom layouts tailored to your brand identity and goals.</p>
+                <div class="fade-in p-6 bg-[#f0f4f8] rounded-sm hover:shadow-[0_10px_30px_rgba(143,168,200,0.1)] transition duration-300">
+                    <h3 class="text-xl font-bold mb-4 text-[#374151]">01 / Web Design</h3>
+                    <p class="text-[#64748b]">Custom layouts tailored to your brand identity and goals.</p>
                 </div>
-                <div class="fade-in">
-                    <h3 class="text-xl font-bold mb-4">02 / Development</h3>
-                    <p class="text-gray-500">Responsive, fast-loading websites built with modern code.</p>
+                <div class="fade-in p-6 bg-[#f0f4f8] rounded-sm hover:shadow-[0_10px_30px_rgba(143,168,200,0.1)] transition duration-300">
+                    <h3 class="text-xl font-bold mb-4 text-[#374151]">02 / Development</h3>
+                    <p class="text-[#64748b]">Responsive, fast-loading websites built with modern code.</p>
                 </div>
-                <div class="fade-in">
-                    <h3 class="text-xl font-bold mb-4">03 / SEO Optimization</h3>
-                    <p class="text-gray-500">Making sure your site is visible to the right audience.</p>
+                <div class="fade-in p-6 bg-[#f0f4f8] rounded-sm hover:shadow-[0_10px_30px_rgba(143,168,200,0.1)] transition duration-300">
+                    <h3 class="text-xl font-bold mb-4 text-[#374151]">03 / SEO Optimization</h3>
+                    <p class="text-[#64748b]">Making sure your site is visible to the right audience.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-24 px-6 bg-white">
+    <!-- 4. Projects Section -->
+    <section id="projects" class="py-24 px-6 bg-[#fbfcfd]">
         <div class="max-w-7xl mx-auto space-y-32">
-            
-            <!-- ПРОЄКТ 1 -->
+            <!-- Project 1 -->
             <div class="flex flex-col md:flex-row gap-12 items-center fade-in">
-                <!-- ЗМІНА КАРТИНКИ: Замініть цей <div> на <img src="картинка_проєкту_1.jpg" class="w-full h-full object-cover"> -->
-                <div class="w-full md:w-3/5 aspect-video bg-gray-50">
-                    <div class="w-full h-full flex items-center justify-center text-gray-300">Project Alpha Preview</div>
+                <div class="w-full md:w-3/5 aspect-video bg-[#e8eef3] rounded-sm relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-[#8fa8c8] mix-blend-overlay opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                    <div class="w-full h-full flex items-center justify-center text-[#94a3b8]">Project Alpha Preview</div>
                 </div>
                 <div class="w-full md:w-2/5">
-                    <!-- ЗМІНА ТЕКСТУ -->
-                    <h3 class="text-2xl font-bold mb-4 italic serif">Project Alpha</h3>
-                    <p class="text-gray-500 mb-6">High-end architecture portfolio with heavy emphasis on white space.</p>
-                    <button onclick="openModal('project1')" class="group flex items-center space-x-2 text-xs tracking-widest font-bold uppercase transition hover:text-gray-500">
-                        <span>&rarr;</span>
+                    <h3 class="text-2xl font-bold mb-4 italic serif text-[#2d3748]">Project Alpha</h3>
+                    <p class="text-[#64748b] mb-6">High-end architecture portfolio with heavy emphasis on white space.</p>
+                    <button onclick="openModal('project1')" class="group flex items-center space-x-2 text-xs tracking-widest font-bold uppercase text-[#8fa8c8] hover:text-[#89c2a3] transition duration-300">
+                        <span class="transform group-hover:translate-x-1 transition-transform">&rarr;</span>
                         <span class="underline underline-offset-8">View Details</span>
                     </button>
                 </div>
             </div>
 
-            <!-- ПРОЄКТ 2 -->
+            <!-- Project 2 -->
             <div class="flex flex-col md:flex-row-reverse gap-12 items-center fade-in">
-                <!-- ЗМІНА КАРТИНКИ: Замініть цей <div> на <img src="картинка_проєкту_2.jpg" class="w-full h-full object-cover"> -->
-                <div class="w-full md:w-3/5 aspect-video bg-gray-50">
-                    <div class="w-full h-full flex items-center justify-center text-gray-300">Project Beta Preview</div>
+                <div class="w-full md:w-3/5 aspect-video bg-[#e8eef3] rounded-sm relative overflow-hidden group">
+                    <div class="absolute inset-0 bg-[#89c2a3] mix-blend-overlay opacity-0 group-hover:opacity-20 transition duration-500"></div>
+                    <div class="w-full h-full flex items-center justify-center text-[#94a3b8]">Project Beta Preview</div>
                 </div>
                 <div class="w-full md:w-2/5">
-                    <!-- ЗМІНА ТЕКСТУ -->
-                    <h3 class="text-2xl font-bold mb-4 italic serif">Project Beta</h3>
-                    <p class="text-gray-500 mb-6">Minimalist E-commerce concept for a sustainable fashion brand.</p>
-                    <button onclick="openModal('project2')" class="group flex items-center space-x-2 text-xs tracking-widest font-bold uppercase transition hover:text-gray-500">
-                        <span>&rarr;</span>
+                    <h3 class="text-2xl font-bold mb-4 italic serif text-[#2d3748]">Project Beta</h3>
+                    <p class="text-[#64748b] mb-6">Minimalist E-commerce concept for a sustainable fashion brand.</p>
+                    <button onclick="openModal('project2')" class="group flex items-center space-x-2 text-xs tracking-widest font-bold uppercase text-[#8fa8c8] hover:text-[#89c2a3] transition duration-300">
+                        <span class="transform group-hover:translate-x-1 transition-transform">&rarr;</span>
                         <span class="underline underline-offset-8">View Details</span>
                     </button>
                 </div>
@@ -177,160 +198,170 @@
         </div>
     </section>
 
-    <!-- ЗМІНА КОЛЬОРІВ: bg-[#1a1a1a] - темний фон секції процесу, text-white - білий текст -->
-    <section class="py-24 px-6 bg-[#1a1a1a] text-white">
+    <!-- 5. Process Section -->
+    <!-- Уникнення чорного: використовуємо дуже світлий тон із темним текстом або темний сірий -->
+    <section class="py-24 px-6 bg-[#e8eef3] text-[#374151]">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl mb-16 fade-in">How I Work</h2>
-            <!-- ЗМІНА КОЛЬОРІВ: border-gray-800 - колір лінії зліва -->
-            <div class="flex flex-col space-y-12 border-l border-gray-800 pl-8">
-                <!-- ЗМІНА ТЕКСТУ: Кроки роботи -->
-                <div class="fade-in">
-                    <span class="text-gray-500 text-sm">01. Discovery</span>
-                    <p class="text-xl mt-2">Understanding your goals and target audience.</p>
+            <h2 class="text-3xl mb-16 fade-in text-[#2d3748]">How I Work</h2>
+            <!-- Роздільник: м'який синій -->
+            <div class="flex flex-col space-y-12 border-l-2 border-[#8fa8c8] pl-8 relative">
+                <!-- Світлий ефект світіння вздовж лінії -->
+                <div class="absolute top-0 bottom-0 left-[-1px] w-[2px] bg-[#89c2a3] blur-[2px] opacity-30"></div>
+                
+                <div class="fade-in relative">
+                    <div class="absolute -left-[39px] top-1 w-3 h-3 rounded-full bg-[#8fa8c8] shadow-[0_0_10px_#8fa8c8]"></div>
+                    <span class="text-[#89c2a3] font-semibold text-sm uppercase tracking-wider">01. Discovery</span>
+                    <p class="text-xl mt-2 text-[#475569]">Understanding your goals and target audience.</p>
                 </div>
-                <div class="fade-in">
-                    <span class="text-gray-500 text-sm">02. Strategy</span>
-                    <p class="text-xl mt-2">Developing a clear roadmap and sitemap.</p>
+                <div class="fade-in relative">
+                    <div class="absolute -left-[39px] top-1 w-3 h-3 rounded-full bg-[#8fa8c8] shadow-[0_0_10px_#8fa8c8]"></div>
+                    <span class="text-[#89c2a3] font-semibold text-sm uppercase tracking-wider">02. Strategy</span>
+                    <p class="text-xl mt-2 text-[#475569]">Developing a clear roadmap and sitemap.</p>
                 </div>
-                <div class="fade-in">
-                    <span class="text-gray-500 text-sm">03. Design & Launch</span>
-                    <p class="text-xl mt-2">Creating the visuals and bringing them to life.</p>
+                <div class="fade-in relative">
+                    <div class="absolute -left-[39px] top-1 w-3 h-3 rounded-full bg-[#8fa8c8] shadow-[0_0_10px_#8fa8c8]"></div>
+                    <span class="text-[#89c2a3] font-semibold text-sm uppercase tracking-wider">03. Design & Launch</span>
+                    <p class="text-xl mt-2 text-[#475569]">Creating the visuals and bringing them to life.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="py-32 px-6 text-center">
-        <div class="max-w-4xl mx-auto fade-in">
-            <h2 class="text-4xl md:text-6xl mb-12">Ready to start a project?</h2>
-            <!-- ЗМІНА ПОСИЛАННЯ ТА ТЕКСТУ: Замініть email в mailto: -->
-            <a href="mailto:hello@example.com" class="inline-block bg-black text-white px-12 py-6 text-lg hover:scale-105 transition duration-300 w-full md:w-auto">
+    <!-- 7. CTA Section -->
+    <section id="contact" class="py-32 px-6 text-center relative overflow-hidden bg-[#f6f8fa]">
+        <!-- Легке підсвічування фону за кнопкою CTA -->
+        <div class="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
+            <div class="w-[500px] h-[300px] bg-gradient-to-r from-[#8fa8c8] to-[#89c2a3] rounded-full blur-[100px] opacity-20"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto fade-in relative z-10">
+            <h2 class="text-4xl md:text-6xl mb-12 text-[#2d3748]">Ready to start a project?</h2>
+            <a href="mailto:hello@example.com" class="inline-block bg-[#8fa8c8] text-[#f8fafc] px-12 py-6 text-lg hover:bg-[#89c2a3] shadow-[0_10px_30px_rgba(143,168,200,0.3)] hover:shadow-[0_10px_30px_rgba(137,194,163,0.4)] hover:-translate-y-1 transition-all duration-300 w-full md:w-auto rounded-sm">
                 Get in Touch
             </a>
         </div>
     </section>
 
-    <!-- ЗМІНА КОЛЬОРІВ: border-gray-100 - колір лінії футера -->
-    <footer class="py-12 px-6 border-t border-gray-100 text-sm text-gray-400">
+    <!-- 8. Footer -->
+    <footer class="py-12 px-6 border-t border-[#e2e8f0] text-sm text-[#94a3b8] bg-[#fbfcfd]">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-            <!-- ЗМІНА ТЕКСТУ: Копірайт -->
             <p>© 2024 Designer Studio. All rights reserved.</p>
-            <div class="flex space-x-8">
-                <!-- ЗМІНА ПОСИЛАНЬ ТА ТЕКСТУ: Соціальні мережі -->
-                <a href="#" class="hover:text-black">LinkedIn</a>
-                <a href="#" class="hover:text-black">Instagram</a>
-                <a href="#" class="hover:text-black">Dribbble</a>
+            <div class="flex space-x-8 font-medium">
+                <a href="#" class="hover:text-[#89c2a3] transition duration-300">LinkedIn</a>
+                <a href="#" class="hover:text-[#89c2a3] transition duration-300">Instagram</a>
+                <a href="#" class="hover:text-[#89c2a3] transition duration-300">Dribbble</a>
             </div>
         </div>
     </footer>
 
-    <!-- МОДАЛЬНЕ ВІКНО ДЛЯ КЕЙСІВ -->
-    <div id="project-modal" class="fixed inset-0 z-[100] bg-white hidden opacity-0 overflow-y-auto w-full h-full">
-        <div class="min-h-screen relative px-6 py-16 md:py-24 max-w-5xl mx-auto">
-            <button onclick="closeModal()" class="fixed top-6 right-6 md:top-12 md:right-12 text-sm uppercase tracking-widest font-bold border-b border-black pb-1 hover:text-gray-500 transition z-[110] bg-white md:bg-transparent px-2 py-1 md:p-0">Close</button>
+    <!-- Case Study Modal -->
+    <div id="project-modal" class="fixed inset-0 z-[100] bg-[#f6f8fa] hidden opacity-0 overflow-y-auto w-full h-full">
+        <!-- Блюр-фон для модалки -->
+        <div class="fixed top-0 left-0 w-full h-full pointer-events-none z-[-1]">
+            <div class="absolute -top-40 -right-40 w-96 h-96 bg-[#8fa8c8] opacity-20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-10 left-10 w-[30rem] h-[30rem] bg-[#89c2a3] opacity-10 rounded-full blur-[100px]"></div>
+        </div>
+
+        <div class="min-h-screen relative px-6 py-16 md:py-24 max-w-5xl mx-auto z-10">
+            <button onclick="closeModal()" class="fixed top-6 right-6 md:top-12 md:right-12 text-sm uppercase tracking-widest font-bold border-b border-[#374151] pb-1 text-[#374151] hover:text-[#89c2a3] hover:border-[#89c2a3] transition duration-300 z-[110] bg-[#f6f8fa] md:bg-transparent px-2 py-1 md:p-0">Close</button>
             
-            <!-- ДЕТАЛІ ПРОЄКТУ 1 -->
+            <!-- Project 1 Details -->
             <div id="project1-details" class="modal-project-content hidden">
-                <span class="uppercase tracking-widest text-xs text-gray-400 mb-4 block">Case Study</span>
-                <h2 class="text-4xl md:text-6xl italic serif mb-8">Project Alpha</h2>
+                <span class="uppercase tracking-widest text-xs text-[#89c2a3] font-semibold mb-4 block">Case Study</span>
+                <h2 class="text-4xl md:text-6xl italic serif mb-8 text-[#2d3748]">Project Alpha</h2>
                 
-                <!-- ЗМІНА КАРТИНКИ: Головне зображення кейсу 1 -->
-                <div class="aspect-video bg-gray-50 mb-16">
-                    <div class="w-full h-full flex items-center justify-center text-gray-300">Project Alpha Main Mockup</div>
+                <div class="aspect-video bg-[#e8eef3] rounded-sm mb-16 shadow-sm">
+                    <div class="w-full h-full flex items-center justify-center text-[#94a3b8]">Project Alpha Main Mockup</div>
                 </div>
 
-                <!-- ЗМІНА ТЕКСТУ: Опис цілей та підходу -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
                     <div>
-                        <h4 class="text-sm uppercase tracking-widest text-black font-bold mb-4 block">Project Goal</h4>
-                        <p class="text-gray-600 leading-relaxed">To create a high-end architecture portfolio that emphasizes white space and large typography, allowing the imagery to take center stage and reflect the architect's premium positioning.</p>
+                        <h4 class="text-sm uppercase tracking-widest text-[#374151] font-bold mb-4 block">Project Goal</h4>
+                        <p class="text-[#64748b] leading-relaxed">To create a high-end architecture portfolio that emphasizes white space and large typography, allowing the imagery to take center stage and reflect the architect's premium positioning.</p>
                     </div>
                     <div>
-                        <h4 class="text-sm uppercase tracking-widest text-black font-bold mb-4 block">Design Approach</h4>
-                        <p class="text-gray-600 leading-relaxed">Minimalist geometry, stark contrasts, and a monochromatic palette were utilized to mirror the modern, brutalist architectural styles featured in the client's work.</p>
+                        <h4 class="text-sm uppercase tracking-widest text-[#374151] font-bold mb-4 block">Design Approach</h4>
+                        <p class="text-[#64748b] leading-relaxed">Minimalist geometry, soft contrasts, and a calm palette were utilized to mirror the modern architectural styles featured in the client's work.</p>
                     </div>
                 </div>
 
                 <div class="mb-16">
-                    <h4 class="text-sm uppercase tracking-widest text-black font-bold mb-6 block">Key Features</h4>
+                    <h4 class="text-sm uppercase tracking-widest text-[#374151] font-bold mb-6 block">Key Features</h4>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <!-- ЗМІНА КОЛЬОРІВ ТА ТЕКСТУ: bg-gray-50 - фон карток фіч -->
-                        <div class="bg-gray-50 p-8">
-                            <strong class="block mb-3 font-medium text-black">Structure</strong>
-                            <p class="text-gray-600 text-sm leading-relaxed">Asymmetrical grid layouts designed to break digital monotony and create an editorial magazine feel.</p>
+                        <div class="bg-[#f0f4f8] p-8 rounded-sm hover:shadow-md transition-shadow duration-300 border border-[#e2e8f0]">
+                            <strong class="block mb-3 font-semibold text-[#8fa8c8]">Structure</strong>
+                            <p class="text-[#64748b] text-sm leading-relaxed">Asymmetrical grid layouts designed to break digital monotony and create an editorial magazine feel.</p>
                         </div>
-                        <div class="bg-gray-50 p-8">
-                            <strong class="block mb-3 font-medium text-black">UX</strong>
-                            <p class="text-gray-600 text-sm leading-relaxed">Smooth horizontal scroll hijacking for gallery views, providing an immersive exploration experience.</p>
+                        <div class="bg-[#f0f4f8] p-8 rounded-sm hover:shadow-md transition-shadow duration-300 border border-[#e2e8f0]">
+                            <strong class="block mb-3 font-semibold text-[#8fa8c8]">UX</strong>
+                            <p class="text-[#64748b] text-sm leading-relaxed">Smooth horizontal scroll hijacking for gallery views, providing an immersive exploration experience.</p>
                         </div>
-                        <div class="bg-gray-50 p-8">
-                            <strong class="block mb-3 font-medium text-black">Visual Decisions</strong>
-                            <p class="text-gray-600 text-sm leading-relaxed">Playfair Display integration for primary headings to add a touch of classic elegance against modern layouts.</p>
+                        <div class="bg-[#f0f4f8] p-8 rounded-sm hover:shadow-md transition-shadow duration-300 border border-[#e2e8f0]">
+                            <strong class="block mb-3 font-semibold text-[#8fa8c8]">Visual Decisions</strong>
+                            <p class="text-[#64748b] text-sm leading-relaxed">Playfair Display integration for primary headings to add a touch of classic elegance against modern layouts.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- ЗМІНА КАРТИНОК: Додаткові зображення кейсу 1 -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-                    <div class="aspect-square bg-gray-50 flex items-center justify-center text-gray-300">Interior View Mockup</div>
-                    <div class="aspect-square bg-gray-50 flex items-center justify-center text-gray-300">Exterior View Mockup</div>
+                    <div class="aspect-square bg-[#e8eef3] rounded-sm flex items-center justify-center text-[#94a3b8]">Interior View Mockup</div>
+                    <div class="aspect-square bg-[#e8eef3] rounded-sm flex items-center justify-center text-[#94a3b8]">Exterior View Mockup</div>
                 </div>
 
-                <div class="border-t border-gray-100 pt-12">
-                    <h4 class="text-sm uppercase tracking-widest text-black font-bold mb-4 block">Result</h4>
-                    <p class="text-gray-600 leading-relaxed text-xl">The new platform increased average session duration by 150% and elevated the brand's digital presence, resulting in a 40% increase in high-ticket client inquiries within the first quarter.</p>
+                <div class="border-t border-[#e2e8f0] pt-12 relative">
+                    <div class="absolute top-0 left-0 w-1/4 h-[1px] bg-gradient-to-r from-[#8fa8c8] to-transparent"></div>
+                    <h4 class="text-sm uppercase tracking-widest text-[#374151] font-bold mb-4 block">Result</h4>
+                    <p class="text-[#64748b] leading-relaxed text-xl">The new platform increased average session duration by 150% and elevated the brand's digital presence, resulting in a 40% increase in inquiries within the first quarter.</p>
                 </div>
             </div>
 
-            <!-- ДЕТАЛІ ПРОЄКТУ 2 -->
+            <!-- Project 2 Details -->
             <div id="project2-details" class="modal-project-content hidden">
-                <span class="uppercase tracking-widest text-xs text-gray-400 mb-4 block">Case Study</span>
-                <h2 class="text-4xl md:text-6xl italic serif mb-8">Project Beta</h2>
+                <span class="uppercase tracking-widest text-xs text-[#89c2a3] font-semibold mb-4 block">Case Study</span>
+                <h2 class="text-4xl md:text-6xl italic serif mb-8 text-[#2d3748]">Project Beta</h2>
                 
-                <!-- ЗМІНА КАРТИНКИ: Головне зображення кейсу 2 -->
-                <div class="aspect-video bg-gray-50 mb-16">
-                    <div class="w-full h-full flex items-center justify-center text-gray-300">Project Beta Main Mockup</div>
+                <div class="aspect-video bg-[#e8eef3] rounded-sm mb-16 shadow-sm">
+                    <div class="w-full h-full flex items-center justify-center text-[#94a3b8]">Project Beta Main Mockup</div>
                 </div>
 
-                <!-- ЗМІНА ТЕКСТУ: Опис цілей та підходу -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
                     <div>
-                        <h4 class="text-sm uppercase tracking-widest text-black font-bold mb-4 block">Project Goal</h4>
-                        <p class="text-gray-600 leading-relaxed">To design a minimalist e-commerce concept for a sustainable fashion brand that focuses on product origin, transparency, and seamless purchasing.</p>
+                        <h4 class="text-sm uppercase tracking-widest text-[#374151] font-bold mb-4 block">Project Goal</h4>
+                        <p class="text-[#64748b] leading-relaxed">To design a minimalist e-commerce concept for a sustainable fashion brand that focuses on product origin, transparency, and seamless purchasing.</p>
                     </div>
                     <div>
-                        <h4 class="text-sm uppercase tracking-widest text-black font-bold mb-4 block">Design Approach</h4>
-                        <p class="text-gray-600 leading-relaxed">An earthy, subdued color palette combined with organic shapes and ample negative space to communicate the brand's eco-friendly ethos.</p>
+                        <h4 class="text-sm uppercase tracking-widest text-[#374151] font-bold mb-4 block">Design Approach</h4>
+                        <p class="text-[#64748b] leading-relaxed">An earthy, subdued color palette combined with soft shapes and ample negative space to communicate the brand's eco-friendly ethos.</p>
                     </div>
                 </div>
 
                 <div class="mb-16">
-                    <h4 class="text-sm uppercase tracking-widest text-black font-bold mb-6 block">Key Features</h4>
+                    <h4 class="text-sm uppercase tracking-widest text-[#374151] font-bold mb-6 block">Key Features</h4>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="bg-gray-50 p-8">
-                            <strong class="block mb-3 font-medium text-black">Structure</strong>
-                            <p class="text-gray-600 text-sm leading-relaxed">Streamlined user flow minimizing the steps from product discovery to checkout.</p>
+                        <div class="bg-[#f0f4f8] p-8 rounded-sm hover:shadow-md transition-shadow duration-300 border border-[#e2e8f0]">
+                            <strong class="block mb-3 font-semibold text-[#8fa8c8]">Structure</strong>
+                            <p class="text-[#64748b] text-sm leading-relaxed">Streamlined user flow minimizing the steps from product discovery to checkout.</p>
                         </div>
-                        <div class="bg-gray-50 p-8">
-                            <strong class="block mb-3 font-medium text-black">UX</strong>
-                            <p class="text-gray-600 text-sm leading-relaxed">Interactive product materials breakdown on hover, enhancing user education without cluttering the interface.</p>
+                        <div class="bg-[#f0f4f8] p-8 rounded-sm hover:shadow-md transition-shadow duration-300 border border-[#e2e8f0]">
+                            <strong class="block mb-3 font-semibold text-[#8fa8c8]">UX</strong>
+                            <p class="text-[#64748b] text-sm leading-relaxed">Interactive product materials breakdown on hover, enhancing user education without cluttering the interface.</p>
                         </div>
-                        <div class="bg-gray-50 p-8">
-                            <strong class="block mb-3 font-medium text-black">Visual Decisions</strong>
-                            <p class="text-gray-600 text-sm leading-relaxed">Use of high-grain photography and muted tones to reinforce the natural and organic brand narrative.</p>
+                        <div class="bg-[#f0f4f8] p-8 rounded-sm hover:shadow-md transition-shadow duration-300 border border-[#e2e8f0]">
+                            <strong class="block mb-3 font-semibold text-[#8fa8c8]">Visual Decisions</strong>
+                            <p class="text-[#64748b] text-sm leading-relaxed">Use of high-grain photography and pastel tones to reinforce the natural and organic brand narrative.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- ЗМІНА КАРТИНОК: Додаткові зображення кейсу 2 -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-                    <div class="aspect-[3/4] bg-gray-50 flex items-center justify-center text-gray-300">Mobile Checkout Mockup</div>
-                    <div class="aspect-[3/4] bg-gray-50 flex items-center justify-center text-gray-300">Packaging Mockup</div>
+                    <div class="aspect-[3/4] bg-[#e8eef3] rounded-sm flex items-center justify-center text-[#94a3b8]">Mobile Checkout Mockup</div>
+                    <div class="aspect-[3/4] bg-[#e8eef3] rounded-sm flex items-center justify-center text-[#94a3b8]">Packaging Mockup</div>
                 </div>
 
-                <div class="border-t border-gray-100 pt-12">
-                    <h4 class="text-sm uppercase tracking-widest text-black font-bold mb-4 block">Result</h4>
-                    <p class="text-gray-600 leading-relaxed text-xl">A seamless shopping experience that reduced cart abandonment by 25% and effectively communicated the brand's core values to a conscious consumer base.</p>
+                <div class="border-t border-[#e2e8f0] pt-12 relative">
+                    <div class="absolute top-0 left-0 w-1/4 h-[1px] bg-gradient-to-r from-[#8fa8c8] to-transparent"></div>
+                    <h4 class="text-sm uppercase tracking-widest text-[#374151] font-bold mb-4 block">Result</h4>
+                    <p class="text-[#64748b] leading-relaxed text-xl">A seamless shopping experience that reduced cart abandonment by 25% and effectively communicated the brand's core values to a conscious consumer base.</p>
                 </div>
             </div>
         </div>
