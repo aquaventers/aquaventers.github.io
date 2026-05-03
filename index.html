@@ -32,7 +32,6 @@
             transform: translateX(0);
         }
 
-        /* М'який градієнтний розділювач */
         .accent-line {
             height: 1px;
             background: linear-gradient(90deg, #8fa8c8, #89c2a3);
@@ -45,7 +44,6 @@
             transition: opacity 0.5s ease-in-out;
         }
 
-        /* Заборона на чистий чорний і білий для скролбару (опціонально для естетики) */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -61,10 +59,8 @@
         }
     </style>
 </head>
-<!-- Фон: дуже світлий сіро-синій, Текст: темно-сірий (slate-700), Виділення: софт блю -->
 <body class="bg-[#f6f8fa] text-[#374151] selection:bg-[#8fa8c8] selection:text-[#f6f8fa]">
 
-    <!-- Навігація -->
     <nav class="fixed w-full z-50 bg-[#f6f8fa]/80 backdrop-blur-md border-b border-[#e2e8f0]">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-xl font-bold tracking-tighter uppercase text-[#374151]">Studio.</a>
@@ -83,7 +79,6 @@
         </div>
     </nav>
 
-    <!-- Мобільне меню -->
     <div id="mobile-menu" class="fixed inset-0 bg-[#f6f8fa] z-40 flex flex-col justify-center items-center space-y-8 text-2xl font-light md:hidden">
         <a href="#projects" class="mobile-link text-[#374151] hover:text-[#89c2a3] transition">Projects</a>
         <a href="#services" class="mobile-link text-[#374151] hover:text-[#89c2a3] transition">Services</a>
@@ -91,10 +86,7 @@
         <a href="#contact" class="mobile-link text-[#374151] hover:text-[#89c2a3] transition">Contact</a>
     </div>
 
-    <!-- 1. Hero Section -->
-    <!-- Легкий градієнт фону та блюр-ефекти -->
     <section class="relative min-h-screen flex items-center justify-center px-6 pt-20 bg-gradient-to-br from-[#eef2f6] via-[#f6f8fa] to-[#eef7f3] overflow-hidden">
-        <!-- Декоративні розмиті плями (blue -> emerald) -->
         <div class="absolute top-10 left-10 w-[400px] h-[400px] bg-[#8fa8c8] rounded-full mix-blend-multiply filter blur-[120px] opacity-30 pointer-events-none"></div>
         <div class="absolute bottom-10 right-10 w-[400px] h-[400px] bg-[#89c2a3] rounded-full mix-blend-multiply filter blur-[120px] opacity-30 pointer-events-none"></div>
 
@@ -106,11 +98,9 @@
                 Landing pages and portfolio websites for creatives and experts
             </p>
             <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 w-full md:justify-center fade-in">
-                <!-- Primary кнопка: soft blue, hover: emerald з легким сяйвом -->
                 <a href="#projects" class="bg-[#8fa8c8] text-[#f8fafc] px-8 py-4 text-center hover:bg-[#89c2a3] shadow-[0_4px_20px_rgba(143,168,200,0.3)] hover:shadow-[0_4px_20px_rgba(137,194,163,0.4)] transition-all duration-300 min-h-[44px] flex items-center justify-center rounded-sm">
                     View Projects
                 </a>
-                <!-- Secondary кнопка: темно-сіра рамка, hover: emerald -->
                 <a href="#contact" class="border border-[#374151] text-[#374151] px-8 py-4 text-center hover:border-[#89c2a3] hover:text-[#89c2a3] transition-all duration-300 min-h-[44px] flex items-center justify-center rounded-sm">
                     Contact Me
                 </a>
@@ -118,10 +108,8 @@
         </div>
     </section>
 
-    <!-- 2. About Section -->
     <section id="about" class="py-24 px-6 bg-[#f0f4f8]">
         <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <!-- Зображення або плашка: світло-сіро-синя -->
             <div class="aspect-[4/5] bg-[#e1e7ef] fade-in rounded-sm shadow-sm relative group">
                 <div class="absolute inset-0 bg-gradient-to-tr from-[#8fa8c8] to-[#89c2a3] opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-sm"></div>
                 <div class="w-full h-full flex items-center justify-center text-[#94a3b8]">[ Designer Photo ]</div>
@@ -136,9 +124,7 @@
         </div>
     </section>
 
-    <!-- 3. Services Section -->
     <section id="services" class="py-24 px-6 relative overflow-hidden bg-[#f6f8fa]">
-        <!-- Дуже легкий блюр-елемент для атмосфери -->
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-[#89c2a3] rounded-full opacity-5 blur-[150px] pointer-events-none"></div>
         
         <div class="max-w-7xl mx-auto relative z-10">
@@ -161,18 +147,17 @@
         </div>
     </section>
 
-    <!-- 4. Projects Section -->
     <section id="projects" class="py-24 px-6 bg-[#fbfcfd]">
         <div class="max-w-7xl mx-auto space-y-32">
             <!-- Project 1 -->
             <div class="flex flex-col md:flex-row gap-12 items-center fade-in">
                 <div class="w-full md:w-3/5 aspect-video bg-[#e8eef3] rounded-sm relative overflow-hidden group">
                     <div class="absolute inset-0 bg-[#8fa8c8] mix-blend-overlay opacity-0 group-hover:opacity-20 transition duration-500"></div>
-                    <div class="w-full h-full flex items-center justify-center text-[#94a3b8]">Project Alpha Preview</div>
+                    <div class="w-full h-full flex items-center justify-center text-[#94a3b8]">Craft Candles Preview</div>
                 </div>
                 <div class="w-full md:w-2/5">
-                    <h3 class="text-2xl font-bold mb-4 italic serif text-[#2d3748]">Project Alpha</h3>
-                    <p class="text-[#64748b] mb-6">High-end architecture portfolio with heavy emphasis on white space.</p>
+                    <h3 class="text-2xl font-bold mb-4 italic serif text-[#2d3748]">Craft Candles Website</h3>
+                    <p class="text-[#64748b] mb-6">A visually atmospheric website for a handmade candle brand that highlights the product’s mood and warmth.</p>
                     <button onclick="openModal('project1')" class="group flex items-center space-x-2 text-xs tracking-widest font-bold uppercase text-[#8fa8c8] hover:text-[#89c2a3] transition duration-300">
                         <span class="transform group-hover:translate-x-1 transition-transform">&rarr;</span>
                         <span class="underline underline-offset-8">View Details</span>
@@ -184,11 +169,11 @@
             <div class="flex flex-col md:flex-row-reverse gap-12 items-center fade-in">
                 <div class="w-full md:w-3/5 aspect-video bg-[#e8eef3] rounded-sm relative overflow-hidden group">
                     <div class="absolute inset-0 bg-[#89c2a3] mix-blend-overlay opacity-0 group-hover:opacity-20 transition duration-500"></div>
-                    <div class="w-full h-full flex items-center justify-center text-[#94a3b8]">Project Beta Preview</div>
+                    <div class="w-full h-full flex items-center justify-center text-[#94a3b8]">Expert Landing Page Preview</div>
                 </div>
                 <div class="w-full md:w-2/5">
-                    <h3 class="text-2xl font-bold mb-4 italic serif text-[#2d3748]">Project Beta</h3>
-                    <p class="text-[#64748b] mb-6">Minimalist E-commerce concept for a sustainable fashion brand.</p>
+                    <h3 class="text-2xl font-bold mb-4 italic serif text-[#2d3748]">Expert / Service Landing Page</h3>
+                    <p class="text-[#64748b] mb-6">A nicely laid out landing page for a photographer, showcasing his recent work and encouraging users to follow him.</p>
                     <button onclick="openModal('project2')" class="group flex items-center space-x-2 text-xs tracking-widest font-bold uppercase text-[#8fa8c8] hover:text-[#89c2a3] transition duration-300">
                         <span class="transform group-hover:translate-x-1 transition-transform">&rarr;</span>
                         <span class="underline underline-offset-8">View Details</span>
@@ -198,14 +183,10 @@
         </div>
     </section>
 
-    <!-- 5. Process Section -->
-    <!-- Уникнення чорного: використовуємо дуже світлий тон із темним текстом або темний сірий -->
     <section class="py-24 px-6 bg-[#e8eef3] text-[#374151]">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-3xl mb-16 fade-in text-[#2d3748]">How I Work</h2>
-            <!-- Роздільник: м'який синій -->
             <div class="flex flex-col space-y-12 border-l-2 border-[#8fa8c8] pl-8 relative">
-                <!-- Світлий ефект світіння вздовж лінії -->
                 <div class="absolute top-0 bottom-0 left-[-1px] w-[2px] bg-[#89c2a3] blur-[2px] opacity-30"></div>
                 
                 <div class="fade-in relative">
@@ -227,9 +208,7 @@
         </div>
     </section>
 
-    <!-- 7. CTA Section -->
     <section id="contact" class="py-32 px-6 text-center relative overflow-hidden bg-[#f6f8fa]">
-        <!-- Легке підсвічування фону за кнопкою CTA -->
         <div class="absolute inset-0 flex justify-center items-center pointer-events-none z-0">
             <div class="w-[500px] h-[300px] bg-gradient-to-r from-[#8fa8c8] to-[#89c2a3] rounded-full blur-[100px] opacity-20"></div>
         </div>
@@ -242,7 +221,6 @@
         </div>
     </section>
 
-    <!-- 8. Footer -->
     <footer class="py-12 px-6 border-t border-[#e2e8f0] text-sm text-[#94a3b8] bg-[#fbfcfd]">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
             <p>© 2024 Designer Studio. All rights reserved.</p>
@@ -256,7 +234,6 @@
 
     <!-- Case Study Modal -->
     <div id="project-modal" class="fixed inset-0 z-[100] bg-[#f6f8fa] hidden opacity-0 overflow-y-auto w-full h-full">
-        <!-- Блюр-фон для модалки -->
         <div class="fixed top-0 left-0 w-full h-full pointer-events-none z-[-1]">
             <div class="absolute -top-40 -right-40 w-96 h-96 bg-[#8fa8c8] opacity-20 rounded-full blur-3xl"></div>
             <div class="absolute bottom-10 left-10 w-[30rem] h-[30rem] bg-[#89c2a3] opacity-10 rounded-full blur-[100px]"></div>
@@ -268,20 +245,20 @@
             <!-- Project 1 Details -->
             <div id="project1-details" class="modal-project-content hidden">
                 <span class="uppercase tracking-widest text-xs text-[#89c2a3] font-semibold mb-4 block">Case Study</span>
-                <h2 class="text-4xl md:text-6xl italic serif mb-8 text-[#2d3748]">Project Alpha</h2>
+                <h2 class="text-4xl md:text-6xl italic serif mb-8 text-[#2d3748]">Craft Candles Website</h2>
                 
                 <div class="aspect-video bg-[#e8eef3] rounded-sm mb-16 shadow-sm">
-                    <div class="w-full h-full flex items-center justify-center text-[#94a3b8]">Project Alpha Main Mockup</div>
+                    <div class="w-full h-full flex items-center justify-center text-[#94a3b8]">Craft Candles Main Mockup</div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
                     <div>
                         <h4 class="text-sm uppercase tracking-widest text-[#374151] font-bold mb-4 block">Project Goal</h4>
-                        <p class="text-[#64748b] leading-relaxed">To create a high-end architecture portfolio that emphasizes white space and large typography, allowing the imagery to take center stage and reflect the architect's premium positioning.</p>
+                        <p class="text-[#64748b] leading-relaxed">To create a visually atmospheric website for a handmade candle brand that highlights the product’s mood, warmth, and aesthetic appeal, while maintaining a clean and modern presentation.</p>
                     </div>
                     <div>
                         <h4 class="text-sm uppercase tracking-widest text-[#374151] font-bold mb-4 block">Design Approach</h4>
-                        <p class="text-[#64748b] leading-relaxed">Minimalist geometry, soft contrasts, and a calm palette were utilized to mirror the modern architectural styles featured in the client's work.</p>
+                        <p class="text-[#64748b] leading-relaxed">A soft, minimalistic approach with warm tones and calm composition was used to reflect the handcrafted nature of the product. The focus was placed on creating an emotional connection through visuals and simplicity.</p>
                     </div>
                 </div>
 
@@ -290,48 +267,48 @@
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div class="bg-[#f0f4f8] p-8 rounded-sm hover:shadow-md transition-shadow duration-300 border border-[#e2e8f0]">
                             <strong class="block mb-3 font-semibold text-[#8fa8c8]">Structure</strong>
-                            <p class="text-[#64748b] text-sm leading-relaxed">Asymmetrical grid layouts designed to break digital monotony and create an editorial magazine feel.</p>
+                            <p class="text-[#64748b] text-sm leading-relaxed">A clear and linear structure that guides the user through the brand story, product presentation, and key information without overload. Each block is separated with enough white space to maintain readability.</p>
                         </div>
                         <div class="bg-[#f0f4f8] p-8 rounded-sm hover:shadow-md transition-shadow duration-300 border border-[#e2e8f0]">
                             <strong class="block mb-3 font-semibold text-[#8fa8c8]">UX</strong>
-                            <p class="text-[#64748b] text-sm leading-relaxed">Smooth horizontal scroll hijacking for gallery views, providing an immersive exploration experience.</p>
+                            <p class="text-[#64748b] text-sm leading-relaxed">Simple and intuitive scrolling experience with no distractions. The layout allows users to naturally explore the content and focus on the products.</p>
                         </div>
                         <div class="bg-[#f0f4f8] p-8 rounded-sm hover:shadow-md transition-shadow duration-300 border border-[#e2e8f0]">
                             <strong class="block mb-3 font-semibold text-[#8fa8c8]">Visual Decisions</strong>
-                            <p class="text-[#64748b] text-sm leading-relaxed">Playfair Display integration for primary headings to add a touch of classic elegance against modern layouts.</p>
+                            <p class="text-[#64748b] text-sm leading-relaxed">Warm color palette combined with neutral backgrounds to highlight the candles. Large imagery and stylish typography emphasize the aesthetic and handmade feel of the brand.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-                    <div class="aspect-square bg-[#e8eef3] rounded-sm flex items-center justify-center text-[#94a3b8]">Interior View Mockup</div>
-                    <div class="aspect-square bg-[#e8eef3] rounded-sm flex items-center justify-center text-[#94a3b8]">Exterior View Mockup</div>
+                    <div class="aspect-square bg-[#e8eef3] rounded-sm flex items-center justify-center text-[#94a3b8]">Product Details Mockup</div>
+                    <div class="aspect-square bg-[#e8eef3] rounded-sm flex items-center justify-center text-[#94a3b8]">Brand Story Mockup</div>
                 </div>
 
                 <div class="border-t border-[#e2e8f0] pt-12 relative">
                     <div class="absolute top-0 left-0 w-1/4 h-[1px] bg-gradient-to-r from-[#8fa8c8] to-transparent"></div>
                     <h4 class="text-sm uppercase tracking-widest text-[#374151] font-bold mb-4 block">Result</h4>
-                    <p class="text-[#64748b] leading-relaxed text-xl">The new platform increased average session duration by 150% and elevated the brand's digital presence, resulting in a 40% increase in inquiries within the first quarter.</p>
+                    <p class="text-[#64748b] leading-relaxed text-xl">The website creates a calm and aesthetic space, where the product becomes the central focus. It helps communicate the brand’s atmosphere and presents the candles as a lifestyle element rather than just a product.</p>
                 </div>
             </div>
 
             <!-- Project 2 Details -->
             <div id="project2-details" class="modal-project-content hidden">
                 <span class="uppercase tracking-widest text-xs text-[#89c2a3] font-semibold mb-4 block">Case Study</span>
-                <h2 class="text-4xl md:text-6xl italic serif mb-8 text-[#2d3748]">Project Beta</h2>
+                <h2 class="text-4xl md:text-6xl italic serif mb-8 text-[#2d3748]">Expert / Service Landing Page</h2>
                 
                 <div class="aspect-video bg-[#e8eef3] rounded-sm mb-16 shadow-sm">
-                    <div class="w-full h-full flex items-center justify-center text-[#94a3b8]">Project Beta Main Mockup</div>
+                    <div class="w-full h-full flex items-center justify-center text-[#94a3b8]">Expert Landing Page Main Mockup</div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
                     <div>
                         <h4 class="text-sm uppercase tracking-widest text-[#374151] font-bold mb-4 block">Project Goal</h4>
-                        <p class="text-[#64748b] leading-relaxed">To design a minimalist e-commerce concept for a sustainable fashion brand that focuses on product origin, transparency, and seamless purchasing.</p>
+                        <p class="text-[#64748b] leading-relaxed">Design a nicely laid out landing page for a photographer, showcasing his recent work and encouraging users to follow him.</p>
                     </div>
                     <div>
                         <h4 class="text-sm uppercase tracking-widest text-[#374151] font-bold mb-4 block">Design Approach</h4>
-                        <p class="text-[#64748b] leading-relaxed">An earthy, subdued color palette combined with soft shapes and ample negative space to communicate the brand's eco-friendly ethos.</p>
+                        <p class="text-[#64748b] leading-relaxed">A balance between clarity and modern aesthetics was used to ensure the information is easy to follow while still maintaining a visually appealing layout.</p>
                     </div>
                 </div>
 
@@ -340,28 +317,28 @@
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div class="bg-[#f0f4f8] p-8 rounded-sm hover:shadow-md transition-shadow duration-300 border border-[#e2e8f0]">
                             <strong class="block mb-3 font-semibold text-[#8fa8c8]">Structure</strong>
-                            <p class="text-[#64748b] text-sm leading-relaxed">Streamlined user flow minimizing the steps from product discovery to checkout.</p>
+                            <p class="text-[#64748b] text-sm leading-relaxed">The page is built with a logical flow: introduction → value → details → call to action. Each section gradually leads the user closer to the final decision.</p>
                         </div>
                         <div class="bg-[#f0f4f8] p-8 rounded-sm hover:shadow-md transition-shadow duration-300 border border-[#e2e8f0]">
                             <strong class="block mb-3 font-semibold text-[#8fa8c8]">UX</strong>
-                            <p class="text-[#64748b] text-sm leading-relaxed">Interactive product materials breakdown on hover, enhancing user education without cluttering the interface.</p>
+                            <p class="text-[#64748b] text-sm leading-relaxed">The layout is designed to reduce friction and make navigation effortless. Information is broken into digestible sections, helping users quickly understand the offer.</p>
                         </div>
                         <div class="bg-[#f0f4f8] p-8 rounded-sm hover:shadow-md transition-shadow duration-300 border border-[#e2e8f0]">
                             <strong class="block mb-3 font-semibold text-[#8fa8c8]">Visual Decisions</strong>
-                            <p class="text-[#64748b] text-sm leading-relaxed">Use of high-grain photography and pastel tones to reinforce the natural and organic brand narrative.</p>
+                            <p class="text-[#64748b] text-sm leading-relaxed">Clean layout with accent elements to highlight key points. Typography and spacing were used to create hierarchy and guide attention through the page.</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-                    <div class="aspect-[3/4] bg-[#e8eef3] rounded-sm flex items-center justify-center text-[#94a3b8]">Mobile Checkout Mockup</div>
-                    <div class="aspect-[3/4] bg-[#e8eef3] rounded-sm flex items-center justify-center text-[#94a3b8]">Packaging Mockup</div>
+                    <div class="aspect-[3/4] bg-[#e8eef3] rounded-sm flex items-center justify-center text-[#94a3b8]">Portfolio Gallery Mockup</div>
+                    <div class="aspect-[3/4] bg-[#e8eef3] rounded-sm flex items-center justify-center text-[#94a3b8]">Contact Section Mockup</div>
                 </div>
 
                 <div class="border-t border-[#e2e8f0] pt-12 relative">
                     <div class="absolute top-0 left-0 w-1/4 h-[1px] bg-gradient-to-r from-[#8fa8c8] to-transparent"></div>
                     <h4 class="text-sm uppercase tracking-widest text-[#374151] font-bold mb-4 block">Result</h4>
-                    <p class="text-[#64748b] leading-relaxed text-xl">A seamless shopping experience that reduced cart abandonment by 25% and effectively communicated the brand's core values to a conscious consumer base.</p>
+                    <p class="text-[#64748b] leading-relaxed text-xl">The landing page presents the service in a clear and structured way, helping users quickly understand the offer and move toward a decision without confusion.</p>
                 </div>
             </div>
         </div>
